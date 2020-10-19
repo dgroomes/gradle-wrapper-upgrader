@@ -3,6 +3,8 @@
 # Upgrade the Gradle wrapper in the current directory and any recursive sub-directories that define a Gradle project. A
 # Gradle project is identified as a directory that contains a 'settings.gradle' or 'settings.gradle.kts' file.
 
+# Latest Gradle releases: https://gradle.org/releases/
+# Set the version of Gradle to upgrade to (overridable via environment variable)
 : ${GRADLE_VERSION:=6.7}
 
 upgradeWrapperInDirectory() {
