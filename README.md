@@ -19,10 +19,16 @@ ln -s "$PWD/upgrade-gradle-wrapper.sh" /usr/local/bin/
 
 ### Usage
 
-In the root directoy of a Gradle project, execute
+In the root directory of a Gradle project, execute
 
 ```
 upgrade-gradle-wrapper.sh
+```
+
+Optionally, execute the script and also specify the Gradle version explicitly via an environment variable:
+
+```
+GRADLE_VERSION=6.8 upgrade-gradle-wrapper.sh
 ```
 
 ### Materials Referenced
