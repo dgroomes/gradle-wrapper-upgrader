@@ -28,7 +28,7 @@ upgrade-gradle-wrapper.sh
 Optionally, execute the script and also specify the Gradle version explicitly via an environment variable:
 
 ```
-GRADLE_VERSION=7.0-rc-1 upgrade-gradle-wrapper.sh
+GRADLE_VERSION=6.8.3 upgrade-gradle-wrapper.sh
 ```
 
 ### Materials Referenced
