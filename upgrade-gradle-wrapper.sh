@@ -5,7 +5,7 @@
 
 # Latest Gradle releases: https://gradle.org/releases/
 # Set the version of Gradle to upgrade to (overridable via environment variable)
-: ${GRADLE_VERSION:=7.1}
+: ${GRADLE_VERSION:=7.1.1}
 
 upgradeWrapperInDirectory() {
 
