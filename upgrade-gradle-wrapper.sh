@@ -1,11 +1,15 @@
 #!/usr/bin/env bash
 #
-# Upgrade the Gradle wrapper in the current directory and any recursive sub-directories that define a Gradle project. A
-# Gradle project is identified as a directory that contains a 'settings.gradle' or 'settings.gradle.kts' file.
+# Upgrade the Gradle wrapper in the current directory and any recursive sub-directories that define a Gradle project.
+#
+# A Gradle project is identified as a directory that contains a 'settings.gradle' or 'settings.gradle.kts' file.
+# "buildSrc/" directories will often exist in non-trivial projects and these may define their own 'settings.gradle' or
+# `settings.gradle.kts' file, but "buildSrc/" will never contain its own Gradle wrapper. So, ignore the "buildSrc/"
+# directory.
 
 # Latest Gradle releases: https://gradle.org/releases/
 # Set the version of Gradle to upgrade to (overridable via environment variable)
-: ${GRADLE_VERSION:=7.1.1}
+: ${GRADLE_VERSION:=7.3}
 
 upgradeWrapperInDirectory() {
 
@@ -40,7 +44,7 @@ upgradeWrapperInDirectory() {
 set -eu
 
 # Find all directories that appear to be a Gradle project
-projects_string=$(find -E . -regex '.*/settings.gradle(.kts)?' -print0 |\
+projects_string=$(find -E . -regex '.*/settings.gradle(.kts)?' -and -not -path '*buildSrc*' -print0 |\
   xargs -0 -n1 dirname |\
   sort --unique)
 

@@ -1,6 +1,6 @@
 # gradle-wrapper-upgrader
 
-🛠 Simple convenience script for upgrading a project's Gradle wrapper.
+🛠 Simple convenience Bash script for upgrading a project's Gradle wrapper.
 
 ---
 **NOTE**:
